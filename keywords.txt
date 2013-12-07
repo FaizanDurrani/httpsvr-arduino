@@ -1,0 +1,94 @@
+#######################################
+# Syntax Coloring Map For HttpSvr
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HttpSvr	KEYWORD1
+ClientProxy	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin_noDHCP	KEYWORD2
+terminate	KEYWORD2
+
+bindUrl	KEYWORD2
+isUrlBound	KEYWORD2
+resetUrlBinding	KEYWORD2
+resetAllBindings	KEYWORD2
+
+pollClient	KEYWORD2
+pollClient_nonBlk	KEYWORD2
+pollClient_blk	KEYWORD2
+resetConnection	KEYWORD2
+
+serveHttpConnections	KEYWORD2
+
+serveRequest_GET	KEYWORD2
+serveRequest_POST	KEYWORD2
+serveRequest_GETPOST	KEYWORD2
+readRequestLine	KEYWORD2
+dispatchRequest_GET	KEYWORD2
+dispatchRequest_POST	KEYWORD2
+dispatchRequest_GETPOST	KEYWORD2
+readNextHeader	KEYWORD2
+skipHeaders	KEYWORD2
+skipToBody	KEYWORD2
+sendResFile	KEYWORD2
+
+uriFindEndOfPath	KEYWORD2
+uriFindStartOfQuery	KEYWORD2
+uriExtractFirstQueryNVP	KEYWORD2
+uriExtractNextQueryNVP	KEYWORD2
+uriFindStartOfFragment	KEYWORD2
+  
+sendResponse	KEYWORD2
+sendResponseOk	KEYWORD2
+sendResponseOkWithContent	KEYWORD2
+sendResponseBadRequest	KEYWORD2
+sendResponseNotFound	KEYWORD2
+sendResponseMethodNotAllowed	KEYWORD2
+sendResponseInternalServerError	KEYWORD2
+sendResponseRequestUriTooLarge	KEYWORD2
+
+localIpAddr	KEYWORD2
+
+setConnection	KEYWORD2
+closeConnection	KEYWORD2
+isConnected	KEYWORD2
+triggerConnTimeout	KEYWORD2
+connTimeoutExpired	KEYWORD2
+  
+socket	KEYWORD2
+localPort	KEYWORD2
+remotePort	KEYWORD2
+remoteIpAddr	KEYWORD2
+remoteMacAddr	KEYWORD2
+
+readByte	KEYWORD2
+readBuffer	KEYWORD2
+unreadByte	KEYWORD2
+peekByte	KEYWORD2
+anyDataReceived	KEYWORD2
+totRead	KEYWORD2
+
+skipAllCRLF	KEYWORD2
+skipAllLWS	KEYWORD2
+skipToNextLine	KEYWORD2
+readCRLF	KEYWORD2
+readToken	KEYWORD2
+readToEOL	KEYWORD2
+  
+writeByte	KEYWORD2
+writeBuffer	KEYWORD2
+flush	KEYWORD2
+totWrite	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

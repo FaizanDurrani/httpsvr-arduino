@@ -1,0 +1,20 @@
+Folder Contents:
+
+* HttpMega.fzz : Fritzing Schematics of test circuit. 
+  Includes Arduino Mega 2560, Arduino Ethernet Shield, 16x2 LCD.
+  Green LED : Blinking idle led
+  Yellow LED: Client connected led
+  Red LED   : AJAX test led
+  
+* HttpMega.png : Schematics of test circuit, as png image
+
+* SD-Card.tar.gz: compressed image of micro-SD card content to be inserted in ethernet shield's slot
+
+HOW TO RUN TEST:
+* Wire as shown in schematics
+* Connect ethernet shield and a PC to an ethernet router
+* Switch on Mega  -> the leds turn on, then off after two seconds
+                  -> The display shows software version, then IP address, then free memory and number of client connections
+* On PC, open a browser and type URL "http://192.168.0.27/" or the IP address you have set to ethernet shield
+  You should see the yellow led switch on, then off after a few seconds, and the index.htm page should appear in the browser
+  
