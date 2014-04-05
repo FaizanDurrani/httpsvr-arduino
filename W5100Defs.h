@@ -49,8 +49,13 @@
 #ifndef W5100DEFS_H
 #define W5100DEFS_H
 
-#define W5100_DBG_PIN0                22  // Customize this according to your configuration
-#define W5100_DBG_PIN1                23  // Customize this according to your configuration
+#ifndef W5100_DBG_PIN0
+  #define W5100_DBG_PIN0              22  // Customize this according to your configuration
+#endif
+
+#ifndef W5100_DBG_PIN1
+  #define W5100_DBG_PIN1              23  // Customize this according to your configuration
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 // Memory Map - Sections
@@ -123,9 +128,9 @@
 // This register is accessed by the host processor to know the cause of an interrupt
 #define W5100_IR                    0x0015
 
-#define W5100_CONFLICT              0x80    // IP Conflict (set to 1 when triggered; write 1 to clear)
-#define W5100_UNREACH               0x40    // Destination unreachable (set to 1 when triggered; write 1 to clear)
-#define W5100_PPPoE                 0x20    // PPPoE Connection Close (set to 1 when triggered; write 1 to clear)
+#define W5100_CONFLICT_INT          0x80    // IP Conflict (set to 1 when triggered; write 1 to clear)
+#define W5100_UNREACH_INT           0x40    // Destination unreachable (set to 1 when triggered; write 1 to clear)
+#define W5100_PPPoE_INT             0x20    // PPPoE Connection Close (set to 1 when triggered; write 1 to clear)
 #define W5100_S3_INT                0x08    // Occurrence of Socket 3 Socket Interrupt (set to 1 when triggered; write 1 to clear)
 #define W5100_S2_INT                0x04    // Occurrence of Socket 2 Socket Interrupt (set to 1 when triggered; write 1 to clear)
 #define W5100_S1_INT                0x02    // Occurrence of Socket 1 Socket Interrupt (set to 1 when triggered; write 1 to clear)
@@ -237,6 +242,7 @@
 #define W5100_P1                    0x02    //   |  (see below)
 #define W5100_P0                    0x01    //  -
 
+#define W5100_PROTOCOL_MASK         0x0F
 #define W5100_PROTOCOL_CLOSED       0x00    // P3:0 P2:0 P1:0 P0:0
 #define W5100_PROTOCOL_TCP          0x01    // P3:0 P2:0 P1:0 P0:1
 #define W5100_PROTOCOL_UDP          0x02    // P3:0 P2:0 P1:1 P0:0
