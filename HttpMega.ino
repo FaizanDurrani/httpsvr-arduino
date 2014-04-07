@@ -181,6 +181,8 @@ void sendNtpRequest(UdpPeer& the_udp, byte *the_buffer, unsigned int the_bufferS
   the_buffer[14] = 49;
   the_buffer[15] = 52;
 
+  // TODO : UDP header? double check if it must be prepended here or not
+  
   // All NTP fields have been given values. We can send a packet requesting a timestamp: 		   
   the_udp.writeBuffer(the_buffer, the_bufferSize);
 }
@@ -211,6 +213,13 @@ String getNtpTime()
   udp.open(HTTPMEGA_UDP_PORT, NTP_SERVER_IP, NTP_PORT);
   udp.writeBuffer(NTP_packetBuffer, sizeof(NTP_packetBuffer));
   delay(1000);
+
+  // Start reading the UDP datagram header (8 bytes)
+  // TODO : Keep length and possibily checksum for flushing input buffer and checking data
+  // TODO : Embed in UdpPeer a function for reading and validating header
+  uint8_t udpHeader[8];
+  if (udp.readBuffer(udpHeader, sizeof(udpHeader)) != sizeof(udpHeader))
+    return "Bad Datagram!";
 
   // Check response. If valid, read into local buffer
   if (udp.readBuffer(NTP_packetBuffer, sizeof(NTP_packetBuffer)) != sizeof(NTP_packetBuffer))
